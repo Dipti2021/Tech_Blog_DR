@@ -14,11 +14,10 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: process.env.SECRET,
-  // Tells our session to use cookies
-  cookie: {},
+ 
+  cookie: {expires: 5*60*1000},//expires the session in 5 mins
   resave: false,
   saveUninitialized: true,
-  // Sets up session store
   store: new SequelizeStore({
     db: sequelize,
   }),

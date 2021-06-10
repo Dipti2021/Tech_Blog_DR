@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         })
 });
-// When a loggedIn user posts a comment, store text, post and user ids
+
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({

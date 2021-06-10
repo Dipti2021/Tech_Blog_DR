@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/review', (req, res) => {
+router.get('/', (req, res) => {
     console.log(req.session);
     
     Post.findAll({
@@ -29,9 +29,9 @@ router.get('/review', (req, res) => {
       ]
     })
     .then(dbPostData => {
-        const reviews = dbPostData.map(post => post.get({ plain: true }));
-        res.render('review', {
-            reviews,
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render('dashboard', {
+            posts,
             loggedIn: req.session.loggedIn
           });
       })
@@ -41,7 +41,7 @@ router.get('/review', (req, res) => {
       });
 })
 
-router.get('/review/create/', withAuth, (req, res) => {
+router.get('/create/', withAuth, (req, res) => {
     Post.findAll({
       where: {
         user_id: req.session.user_id
@@ -49,7 +49,7 @@ router.get('/review/create/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'comment_date',
         'post_content'
       ],
       include: [
@@ -86,7 +86,7 @@ router.get('/review/create/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'comment_date',
         'post_content'
       ],
       include: [
@@ -126,7 +126,7 @@ router.get('/review/create/', withAuth, (req, res) => {
       });
 });
 
-router.get('/review/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id
@@ -134,7 +134,7 @@ router.get('/review/edit/:id', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'created_at',
+        'comment_date',
         'post_content'
       ],
       include: [
@@ -158,7 +158,6 @@ router.get('/review/edit/:id', withAuth, (req, res) => {
           return;
         }
   
-        // serialize the data
         const post = dbPostData.get({ plain: true });
 
         res.render('edit-post', {
