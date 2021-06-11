@@ -1,6 +1,4 @@
 #   Tech Blog
-
-# Toddler Town 
 ![License: Dipti](https://img.shields.io/badge/Coder-Dipti'sCode-yellow.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-MIT-pink.svg)
 ![Project:no](https://img.shields.io/badge/db-Sequelize-red.svg)
@@ -71,8 +69,8 @@ This app can prove to be a one stop desitination for all the parents who are loo
  
  ## Deployment
   The app has been deployed on GITHUB, where all the codes are visible, and the working web app has been deployed on heroku
-   * [The URL of the Github repo](https://github.com/Dipti2021/Toddler-Town)
-   *  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://toddlertown-cu.herokuapp.com/)
+   * [The URL of the Github repo](https://github.com/Dipti2021/Tech_Blog_DR)
+   *  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://techblogdr.herokuapp.com/)
 
 
 
