@@ -8,10 +8,10 @@ router.get('/', (req, res) => {
             attributes: ['id',
                 'title',
                 'post_content',
-                'comment_date'
+                'created_at'
             ],
             order: [
-                ['comment_date', 'DESC']
+                ['created_at', 'DESC']
             ],
             include: [{
                     model: User,
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'comment_date'],
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
             attributes: ['id',
                 'content',
                 'title',
-                'comment_date',
+                'created_at',
                 'post_content'
             ],
             include: [{
@@ -51,7 +51,7 @@ router.get('/:id', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'comment_date'],
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']

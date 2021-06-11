@@ -1,8 +1,5 @@
-<!-- displaying articles -->
-{{> post-info post}}
 
-<!-- displaying form and comments-->
-<!-- only display if logged in -->
+{{> post-info post}}
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -10,7 +7,7 @@
   </div>
 
   <div>
-    <button class="button is-warning ml-5 mb-5" type="submit">add a comment</button>
+    <button class="button is-warning ml-5 mb-5" type="submit">Add a Comment</button>
   </div>
   
 </form>

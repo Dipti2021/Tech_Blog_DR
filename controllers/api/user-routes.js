@@ -39,11 +39,11 @@ router.get('/', (req, res) => {
         include: [
             {
               model: Post,
-              attributes: ['id', 'title', 'post_content', 'comment_date']
+              attributes: ['id', 'title', 'post_content', 'created_at']
             },
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'comment_date'],
+                attributes: ['id', 'comment_text', 'created_at'],
                 include: {
                   model: Post,
                   attributes: ['title']
