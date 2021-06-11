@@ -56,7 +56,7 @@ _Along with it,I deployed the app through __Heroku__ web host and Configured an 
  The web app created can be run either from the server using __localhost:3001__ or through the heroku link. Once uploaded, the web page runs as shown ih the gif.
  
 
-   ![image3](public/tech blog.gif)
+   ![image3](public/tech_blog.gif)
    
    
  
