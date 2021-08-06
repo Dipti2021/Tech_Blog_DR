@@ -57,6 +57,11 @@ _Along with it,I deployed the app through __Heroku__ web host and Configured an 
 
    ![image3](public/tech_blog.gif)
    
+   <p align="center">
+  <img src="public/tech_blog.gif" width="50" title="hover text">
+  
+</p>
+   
    
 
  ## Deployment
